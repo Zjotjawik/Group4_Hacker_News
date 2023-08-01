@@ -51,6 +51,39 @@ button:hover {
   margin-bottom: 2rem;
 }
 
+.spinner {
+  width: 5rem;
+  height: 5rem;
+  border: 0.2rem solid rgba(150, 165, 180, 0.445);
+  border-top-color: red;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+  position: absolute;
+  top: 50%;
+  left: 44%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.category {
+  color: slategray;
+  margin-bottom: 1rem;
+}
+
+.category span {
+  color: #a3b4c4;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
 .section .title a:hover {
   color: #fff;
 }
@@ -127,6 +160,10 @@ button:hover {
 }
 
 @media (min-width: 1024px) {
+  .section .title h1 {
+    font-size: 5rem;
+  }
+
   form {
     display: flex;
     align-items: center;
@@ -134,5 +171,15 @@ button:hover {
 
   input {
     width: 100%;
+    font-size: 2.5 rem;
+  }
+  
+  button {
+    font-size: 2.5 rem;
+  }
+
+  .section {
+    max-width: 992px;
+    margin: auto;
   }
 }
