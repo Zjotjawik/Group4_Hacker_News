@@ -1,5 +1,5 @@
 * {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-size: 16px;
@@ -22,9 +22,6 @@ input {
   padding: 1.25rem 1rem;
   color: slategray;
   border: 0.1rem solid slategray;
-  font-family: inherit;
-  font-size: 1.5rem;
-  outline: none;
   margin-right: 1rem;
   border-radius: 0.625rem;
   width: 100%;
@@ -35,28 +32,34 @@ input ::placeholder {
 }
 
 button {
-  background-color: white;
+  font-family: inherit;
+  font-size: 1.5 rem;
+  outline: none;
+  background-color: #fff;
   padding: 1.25rem 1rem;
   border: 0.1rem solid slategray;
-  font-family: inherit;
-  font-size: 1.5rem;
-  outline: none;
   border-radius: 0.625rem;
-  transition: all 0.15s ease-in-out;
 }
 
 button:hover {
   background-color: transparent;
+  color: slategray;
   cursor: pointer;
   color: slategray;
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 2rem;
 }
 
-ul {
-  list-style: none;
+.section .title a:hover {
+  color: #fff;
 }
 
-a {
-  text-decoration: none;
+.section .cards {
+  display: grid;
+  background-color: #161f34;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
 
 .section {
