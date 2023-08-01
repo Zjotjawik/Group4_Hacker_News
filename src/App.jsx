@@ -36,8 +36,6 @@ function App() {
 
         </article>
       </section>
-
-      <h1>Hello World</h1>
     </>
   )
 }
