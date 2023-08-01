@@ -136,17 +136,3 @@ button:hover {
   .section .title h1 {
     font-size: 6rem;
   }
-
-  form {
-    display: flex;
-    align-items: center;
-  }
-  input {
-    width: 100%;
-  }
-
-  .section {
-    max-width: 992px;
-    margin: auto;
-  }
-}
