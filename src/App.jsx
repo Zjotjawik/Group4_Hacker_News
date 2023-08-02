@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'; // Import React and useState
 import { format } from 'date-fns';
 import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
@@ -12,6 +12,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0); // State for total pages
 
   useEffect(() => {
     setIsLoading(true);
@@ -26,6 +27,7 @@ function App() {
         setItems(data.hits);
         setLargeTitle(data.hits[0]);
         setError(null);
+        setTotalPages(Math.ceil(data.hits.length / itemsPerPage)); // Calculate total pages
       } catch (error) {
         setError('An error occurred while fetching data from the API. Please try again later.');
       } finally {
@@ -48,7 +50,7 @@ function App() {
     }
   };
 
-  const itemsPerPage = 6; // Adjust this as needed
+  const itemsPerPage = 6;
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const itemsToDisplay = items.slice(startIndex, endIndex);
@@ -99,7 +101,7 @@ function App() {
 
             {/* Cards */}
             <div className="cards">
-              {itemsToDisplay.map(({ author, created_at, title, url, objectId }) => (
+              {itemsToDisplay.map(({ author, created_at, title, url, objectId, num_comments }) => (
                 <div key={objectId} className="card">
                   <h2>{title}</h2>
                   <ul>
@@ -111,6 +113,7 @@ function App() {
                     </li>
                   </ul>
                   <p>{format(new Date(created_at), 'dd MMMM yyyy')}</p>
+                  <p>Comments: {num_comments}</p> {/* Display number of comments */}
                 </div>
               ))}
             </div>
@@ -124,6 +127,7 @@ function App() {
               >
                 Previous
               </button>
+              <p>Page {currentPage} of {totalPages}</p> {/* Display current and total pages */}
               <button
                 id="nextBtn"
                 disabled={endIndex >= items.length}
