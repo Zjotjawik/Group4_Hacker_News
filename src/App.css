@@ -12,6 +12,7 @@ body {
 }
 
 form {
+  margin-top: 2rem;
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
@@ -39,6 +40,7 @@ button {
   padding: 1.25rem 1rem;
   border: 0.1rem solid slategray;
   border-radius: 0.625rem;
+  transition: all 0.15s ease-in-out;
 }
 
 button:hover {
@@ -46,8 +48,6 @@ button:hover {
   cursor: pointer;
   color: slategray;
   text-align: center;
-  text-decoration: underline;
-  margin-bottom: 2rem;
 }
 
 .spinner {
