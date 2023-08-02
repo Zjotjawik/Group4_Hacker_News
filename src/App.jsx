@@ -11,20 +11,30 @@ function App() {
   const [text, setText] = useState("");
   const [largeTitle, setLargeTitle] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
+  const [error, setError] = useState(null);
+  
   useEffect(() => {
-    setIsLoading(true)
-
-    const fetchArticles = async() => {
-      const res = await fetch(`https://hn.algolia.com/api/v1/search?query=${query}`)
-      const data = await res.json()
-      setItems(data.hits)
-      setLargeTitle(data.hits[0])
-    }
-
-    fetchArticles()
-    setIsLoading(false)
-  }, [query])
+    setIsLoading(true);
+  
+    const fetchArticles = async () => {
+      try {
+        const res = await fetch(`https://hn.algolia.com/api/v1/search?query=${query}`);
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await res.json();
+        setItems(data.hits);
+        setLargeTitle(data.hits[0]);
+        setError(null);
+      } catch (error) {
+        setError('An error occurred while fetching data from the API. Please try again later.');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+  
+    fetchArticles();
+  }, [query]);
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -52,6 +62,10 @@ function App() {
           <button>Search</button>
         </form>
 
+        <div id="error-message" className="error-message">
+        {error && <p>{error}</p>}
+        </div>
+        
         <ToastContainer 
           position="bottom-right"
           autoClose={5000}
