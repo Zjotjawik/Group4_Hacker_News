@@ -48,7 +48,7 @@ function App() {
     }
   };
 
-  const itemsPerPage = 5; // Adjust this as needed
+  const itemsPerPage = 6; // Adjust this as needed
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const itemsToDisplay = items.slice(startIndex, endIndex);
@@ -117,7 +117,7 @@ function App() {
 
             {/* Pagination */}
             <div className="pagination">
-              <button 
+              <button
                 id="prevBtn"
                 disabled={currentPage === 1}
                 onClick={() => setCurrentPage(currentPage - 1)}

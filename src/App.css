@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #111827;
+  background-image: url("background.jpg");
 }
 
 form {
@@ -19,34 +19,36 @@ form {
 }
 
 input {
-  background-color: transparent;
-  padding: 1.25rem 1rem;
-  color: slategray;
-  border: 0.1rem solid slategray;
+  background: rgb(217, 185, 155);
+  background: linear-gradient(90deg, rgba(217, 185, 155, 1) 0%, rgba(238, 217, 196, 1) 79%);
+  padding: 1.00rem 1rem;
+  color: #9d9d9d;
+  border: 0.1rem solid #323232;
   margin-right: 1rem;
   border-radius: 0.625rem;
   width: 100%;
 }
 
 input ::placeholder {
-  color: slategray;
+  color: #9d9d9d;
 }
 
 button {
   font-family: inherit;
   font-size: 1.5rem;
   outline: none;
-  background-color: #fff;
-  padding: 1.25rem 1rem;
-  border: 0.1rem solid slategray;
+  background-color: #9a7966;
+  padding: 1.00rem 1rem;
+  border: 0.1rem solid #9a7966;
   border-radius: 0.625rem;
   transition: all 0.15s ease-in-out;
+  color: white;
 }
 
 button:hover {
-  background-color: transparent;
+  background-color: #c19980;
   cursor: pointer;
-  color: slategray;
+  color: #323232;
   text-align: center;
   transform: scale(1.05);
 }
@@ -75,14 +77,15 @@ button:hover {
 }
 
 .category {
-  color: slategray;
+  color: #323232;
   margin-bottom: 1rem;
 }
 
 .category span {
-  color: #a3b4c4;
+  color: #8b5a3e;
   font-weight: bold;
   text-transform: capitalize;
+  font-style: italic;
 }
 
 .section .title a:hover {
@@ -103,9 +106,10 @@ button:hover {
 .section .title h1 {
   font-weight: bold;
   font-size: 3rem;
-  color: white;
+  color: #323232;
   text-align: center;
   margin-bottom: 1rem;
+  font-family: Oswald;
 }
 
 .section .title a {
@@ -114,19 +118,20 @@ button:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: slategray;
+  color: #323232;
   text-decoration: underline;
 }
 
 .section .cards div {
-  background-color: #161f34;
+  background-color: #4b4848;
   padding: 1rem;
   border-radius: 0.625rem;
 }
 
 .section .cards div h2 {
-  color: white;
+  color: #e19f78;
   margin-bottom: 1rem;
+  font-size: 15px;
 }
 
 .section .cards div ul {
@@ -137,13 +142,13 @@ button:hover {
 }
 
 .section .cards div ul li {
-  color: slategray;
+  color: #999999;
   list-style: none;
 }
 
 .section .cards div ul li a {
   text-decoration: underline;
-  color: slategray;
+  color: #999999;
 }
 
 .section .cards div ul li a:hover {
@@ -151,7 +156,7 @@ button:hover {
 }
 
 .section .cards div p {
-  color: slategray;
+  color: #999999;
 }
 
 .pagination {
@@ -161,20 +166,20 @@ button:hover {
 }
 
 .pagination button {
-  background-color: #fff;
-  color: black;
-  border: 0.1rem solid slategray;
+  background-color: #9a7966;
+  color: white;
+  border: 0.1rem solid #9a7966;
   padding: 0.25rem 0.75rem;
-  font-size: 0.875rem; 
+  font-size: 0.875rem;
   border-radius: 0.3125rem;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .pagination button:hover {
-  background-color: transparent;
+  background-color: #c19980;
   cursor: pointer;
-  color: slategray;
+  color: black;
   text-align: center;
   transform: scale(1.05);
 }
