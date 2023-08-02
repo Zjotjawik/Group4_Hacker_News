@@ -10,7 +10,7 @@ function App() {
   const [query, setQuery] = useState('programming');
   const [text, setText] = useState("");
   const [largeTitle, setLargeTitle] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true)
