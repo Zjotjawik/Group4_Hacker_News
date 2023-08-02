@@ -48,6 +48,7 @@ button:hover {
   cursor: pointer;
   color: slategray;
   text-align: center;
+  transform: scale(1.05);
 }
 
 .spinner {
@@ -151,6 +152,31 @@ button:hover {
 
 .section .cards div p {
   color: slategray;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  background-color: #fff;
+  color: black;
+  border: 0.1rem solid slategray;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem; 
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.pagination button:hover {
+  background-color: transparent;
+  cursor: pointer;
+  color: slategray;
+  text-align: center;
+  transform: scale(1.05);
 }
 
 @media (min-width: 768px) {
